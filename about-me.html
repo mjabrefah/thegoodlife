@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link rel="stylesheet" href="styles.css">-->
+    <style>
+        .container {
+            margin: 3em;
+            width: 90%;
+            max-width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .image-full {
+            max-height: 700px;
+            width: 100%;
+            object-fit: cover;
+            margin-bottom: 2em;
+
+        }
+
+        /*big screens*/
+        @media (max-width: 675px) {
+            .container {
+                flex-direction: column;
+            }
+
+            header {
+                text-align: center;
+            }
+
+        }
+
+        main {
+            width: 70%;
+
+        }
+
+        aside {
+            width: 20%;
+            min-width: 200px;
+            margin-left: 1em;
+
+        }
+
+
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            font-size: 1.125rem;
+            font-weight: 300;
+
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        header {
+            text-align: center;
+            background-color: #f8f8f8;
+            padding: 2em 0;
+
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: serif;
+            font-weight: 400;
+            color: #143774;
+            margin-top: 0vh;
+        }
+
+        h3 {
+            color: #1792d2;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        a {
+            color: #1792d2;
+            font-weight: bolder;
+        }
+
+        a:hover,
+        a:focus {
+            color: #143774;
+
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 0.88rem;
+            font-weight: 700;
+            font-family: monospace;
+            color: #1792d2;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .article-title {
+            font-size: 1.5rem;
+
+        }
+
+        .article-read-more,
+        .article-info {
+            font-size: .875rem;
+        }
+
+        .article-info {
+            color: #707070;
+            margin: 2em 0;
+        }
+
+        .article-read-more {
+            color: #1792d2;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .article-read-more:hover,
+        .article-read-more:focus {
+            color: #143774;
+            text-decoration: underline;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            justify-content: center;
+
+
+        }
+
+        nav li {
+            margin: 0 1em;
+
+
+        }
+
+        nav a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #707070;
+            font-weight: 700;
+            padding: .2em;
+
+
+
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: #1792d2;
+
+        }
+
+        footer {
+            background: #143774;
+            text-align: center;
+            color: #fff;
+            padding: 3em 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+
+        .article-featured {
+            padding-bottom: 2em;
+            margin-bottom: 2em;
+        }
+
+        .article-recent {
+            display: flex;
+            flex-direction: column-reverse;
+            margin-bottom: 2em;
+        }
+
+        @media (min-width: 675px) {
+            .article-recent {
+                flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+
+            .article-recent-main {
+                width: 70%;
+
+            }
+
+            .article-recent-secondary {
+                width: 25%;
+
+            }
+
+            .article-featured {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .article-image {
+                order: 0;
+            }
+
+            .article-info {
+                order: 1;
+            }
+
+            .article-title {
+                order: 2;
+            }
+
+            .article-body {
+                order: 3;
+            }
+
+            .article-read-more {
+                order: 4;
+            }
+
+
+        }
+
+        /*widget*/
+        .sidebar-widget {
+            border: 20px solid #e9e7e7;
+            margin-bottom: 2em;
+            padding: 1em;
+        }
+
+        .widget-recent-post-title,
+        .widget-title {
+            font-size: 1rem;
+
+
+        }
+
+        .widget-title {
+            font-weight: 700;
+        }
+
+        .widget-recent-post {
+            display: flex;
+            flex-direction: column-reverse;
+            border-bottom: 1px solid #707070;
+            margin-bottom: 1em;
+        }
+
+        .widget-recent-post:last-child {
+            border-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .widget-recent-post-title {
+            padding-top: 2px;
+            color: #143774;
+        }
+
+        .current-page {
+            border-bottom: 1px solid #707070;
+        }
+
+        .current-page:hover {
+            color: #707070;
+        }
+    </style>
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+        <h1>Living the simple life</h1>
+        <div class="subtitle">A BLOG EXPLORING MINIMALISM IN LIFE</div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="about-me.html" class="current-page">about me</a></li>
+                <li><a href="recent-post.html">recent posts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main">
+
+            <img src="thisismeagain.jpg" alt="" class="image-full">
+            <h2>Call me Jonathan and living the simple life saved my life.</h2>
+            <p> <strong> Temporibus autem quibusdam</strong> et aut officiis debitis aut rerum necessitatibus saepe
+                eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a
+                sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus
+                asperiores repellat." </p>
+            <p> Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
+                voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
+                delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores
+                repellat."
+            </p>
+
+            <h3>How I turned things around</h3>
+            <p> <strong> Temporibus autem quibusdam</strong> et aut officiis debitis aut rerum necessitatibus saepe
+                eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a
+                sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus
+                asperiores repellat."</p>
+            <p> Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
+                voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
+                delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores
+                repellat."
+            </p>
+
+            <h3>Now I live the simple life</h3>
+            <p> <strong> Temporibus autem quibusdam</strong> et aut officiis debitis aut rerum necessitatibus saepe
+                eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a
+                sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus
+                asperiores repellat."</p>
+            <p> Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
+                voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
+                delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores
+                repellat."
+            </p>
+
+            </article>
+        </main>
+
+        <aside class="sidebar">
+
+            <div class="sidebar-widget">
+                <h2 class="widget-title">ABOUT ME</h2>
+                <img src="thisismeagain.jpg" alt="" class="widget-image">
+                <p class="widget-body">I find life better and I'm happier when things are nice and going well.</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <h2 class="widget-title">RECENT POSTS</h2>
+                <div class="widget-recent-post">
+                    <h3 class="widget-recent-post-title">Keeping cooking simple</h3>
+                    <img src="coooook.jpg" alt="" class="widget-image">
+                </div>
+
+                <div class="widget-recent-post">
+                    <h3 class="widget-recent-post-title">Simplicity at work </h3>
+                    <img src="work.jpg" alt="" class="widget-image">
+                </div>
+
+                <div class="widget-recent-post">
+                    <h3 class="widget-recent-post-title">Simple decorations</h3>
+                    <img src="simpdecor.jpg" alt="" class="widget-image">
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p> <strong>Living the simple life</strong></p>
+        <p>Copyright 2019</p>
+    </footer>
+</body>
+
+</html>
